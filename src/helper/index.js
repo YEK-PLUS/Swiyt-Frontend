@@ -1,2 +1,3 @@
-const Storage = require('./storage');
-export default {...Storage}
+import Storage from './storage';
+import Api from './api'
+export default {...Api,...Storage}

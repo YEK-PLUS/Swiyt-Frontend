@@ -18,4 +18,4 @@ const _get = (key) => {
 const _remove = (key) => {
 	return (typeof window != 'undefined'?sessionStorage.removeItem(key):null);
 }
-module.exports = {save,get,remove,_save,_get,_remove}
+export default {save,get,remove,_save,_get,_remove}
