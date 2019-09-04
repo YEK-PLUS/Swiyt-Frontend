@@ -1,8 +1,8 @@
-import Auth from '../../api/auth';
-const {Login} = Auth;
-const TryLogin = async() => {
+import { Login } from '../../api/auth';
+
+const TryLogin = async () => {
   let response = await Login() || false;
-  response = response == 'Unauthorized' ? false : response;
-  return await response;
-}
-export default {TryLogin}
+  response = response === 'Unauthorized' ? false : response;
+  return response;
+};
+export default { TryLogin };

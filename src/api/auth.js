@@ -1,6 +1,7 @@
 import API from './index';
 
-export const Login = async() => {
-	return await API('post','/auth/login');
-}
-export default {Login}
+export const Login = async () => {
+  const response = await API('post', '/auth/login');
+  return response;
+};
+export default { Login };

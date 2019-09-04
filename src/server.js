@@ -10,27 +10,25 @@ import Preloaded from './state/preloaded';
 import Store from './state/store';
 import App from './containers/app';
 
-let assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
+const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 
 const server = express();
 server
   .disable('x-powered-by')
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
   .get('/*', (req, res) => {
-
     const store = Store(Preloaded);
-
-
     const context = {};
     const markup = renderToString(
       <Provider store={store}>
         <StaticRouter context={context} location={req.url}>
           <App />
         </StaticRouter>
-      </Provider>
+      </Provider>,
     );
 
     const finalState = store.getState();
+
     if (context.url) {
       res.redirect(context.url);
     } else {
@@ -42,27 +40,25 @@ server
         <meta charset="utf-8" />
         <title>Swiyt</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-          ${
-            assets.client.css
-              ? `<link rel="stylesheet" href="${assets.client.css}">`
-              : ''
-          }
-          ${
-            process.env.NODE_ENV === 'production'
-              ? `<script src="${assets.client.js}" defer></script>`
-              : `<script src="${assets.client.js}" defer crossorigin></script>`
-          }
-
+        <link rel="stylesheet" href="${process.env.PUBLIC_URL}/tailwind.css">
+        ${
+  assets.client.css
+    ? `<link rel="stylesheet" href="${assets.client.css}">`
+    : ''
+}
+        ${
+  process.env.NODE_ENV === 'production'
+    ? `<script src="${assets.client.js}" defer></script>`
+    : `<script src="${assets.client.js}" defer crossorigin></script>`
+}
     </head>
     <body>
         <div id="root">${markup}</div>
-        <script>
-          window.__PRELOADED_SATATE__ = ${serialize(finalState)}
-        </script>
     </body>
-</html>`
+</html>`,
       );
     }
   });
+
 
 export default server;

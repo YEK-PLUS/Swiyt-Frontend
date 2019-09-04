@@ -1,19 +1,16 @@
 import { USER } from '../types';
-const {LOGINED,SAVEUSERDETAILS} = USER
+
+const { LOGINED, SAVEUSERDETAILS } = USER;
 const UserDefaultState = {
-		logined:false,
-		UserDetails:{}
-	};
-const User = (state=UserDefaultState, action) => {
+  logined: false,
+  UserDetails: {},
+};
+const User = (state = UserDefaultState, action) => {
   switch (action.type) {
     case LOGINED:
-      return Object.assign({}, state, {
-        logined: action.value
-      })
+      return { ...state, logined: action.value };
     case SAVEUSERDETAILS:
-      return Object.assign({}, state, {
-        UserDetails: action.value
-      })
+      return { ...state, UserDetails: action.value };
     default:
       return state;
   }

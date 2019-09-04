@@ -1,2 +1,3 @@
 import LoginActions from './auth';
-export default {...LoginActions}
+
+export default { ...LoginActions };

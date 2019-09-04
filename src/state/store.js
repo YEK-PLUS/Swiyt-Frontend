@@ -3,17 +3,17 @@ import thunk from 'redux-thunk';
 
 import Reducers from './reducers';
 
-const SetupStore = PreloadedState => {
+const SetupStore = (PreloadedState) => {
   const store = createStore(
     Reducers,
     PreloadedState,
-    applyMiddleware(thunk)
+    applyMiddleware(thunk),
   );
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('./reducers', () => {
-      const nextRootReducer = require('./reducers').default;
+      const nextRootReducer = Reducers;
       store.replaceReducer(nextRootReducer);
     });
   }
