@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 
 import Helpers from '../helper';
 import * as UserActions from '../state/actions/user';
-import Header from '../components/header';
 
 const mapStateToProps = (state) => ({
   user: state.user,
@@ -24,7 +23,6 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <Header />
         {this.props.user.logined ? 'User Logined' : 'User Not Logined'}
       </div>
     );

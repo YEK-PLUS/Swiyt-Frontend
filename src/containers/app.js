@@ -6,10 +6,12 @@ import { connect } from 'react-redux';
 import Helpers from '../helper';
 import Home from './home';
 import * as UserActions from '../state/actions/user';
-
+import {Pub,keys} from '../public';
 const { Route } = require('react-router-dom');
 const { Switch } = require('react-router-dom');
-
+import {Login,Singup,Forgotpassword} from '../components/popup';
+import Header from '../components/header';
+global.pub = new Pub(keys);
 const mapStateToProps = (state) => ({
   user: state.user,
 });
@@ -40,9 +42,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <Switch>
-        <Route exact path="/" component={Home} />
-      </Switch>
+      <div>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+        </Switch>
+        <Login/>
+
+      </div>
     );
   }
 }

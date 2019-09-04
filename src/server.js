@@ -40,7 +40,7 @@ server
         <meta charset="utf-8" />
         <title>Swiyt</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="${process.env.PUBLIC_URL}/tailwind.css">
+        <link rel="stylesheet" href="${process.env.PUBLIC_URL}/index.css">
         ${
   assets.client.css
     ? `<link rel="stylesheet" href="${assets.client.css}">`
