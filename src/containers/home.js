@@ -5,8 +5,10 @@ import { connect } from 'react-redux';
 
 import Helpers from '../helper';
 import * as UserActions from '../state/actions/user';
-const mapStateToProps = state => ({
-  user:state.user,
+import Header from '../components/header';
+
+const mapStateToProps = (state) => ({
+  user: state.user,
 });
 
 function mapDispatchToProps(dispatch) {
@@ -14,17 +16,19 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-class Home extends React.Component{
-  constructor(props){
+class Home extends React.Component {
+  constructor(props) {
     super(props);
   }
-  render(){
-    return(
+
+  render() {
+    return (
       <div>
-        {this.props.user.logined?"User Logined":"User Not Logined"}
+        <Header />
+        {this.props.user.logined ? 'User Logined' : 'User Not Logined'}
       </div>
-    )
+    );
   }
-};
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
