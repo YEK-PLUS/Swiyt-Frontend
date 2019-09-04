@@ -1,10 +1,10 @@
 const preloaded = {
 	user:{
 		logined:false,
-		userDetails:{}
+		UserDetails:null
 	},
-	popup:{},
-	lesson:{}
+	popup:null,
+	lesson:null
 }
 
 export default preloaded;
