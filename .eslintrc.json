@@ -7,6 +7,9 @@
     "extends": [
         "airbnb"
     ],
+    "ecmaFeatures": {
+        "jsx": true
+    },
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
