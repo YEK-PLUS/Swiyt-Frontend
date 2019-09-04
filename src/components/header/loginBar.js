@@ -4,14 +4,13 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Button from '../ui/button';
-
+import * as PopupActions from '../../state/actions/popup';
 const mapStateToProps = (state) => ({
 
 });
 
 function mapDispatchToProps(dispatch) {
-  const a = {};
-  return bindActionCreators(a, dispatch);
+  return bindActionCreators(PopupActions, dispatch);
 }
 
 class loginBar extends React.Component {

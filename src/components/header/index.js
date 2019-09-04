@@ -35,9 +35,7 @@ class menu extends React.Component {
 
         <div className="float-left w-1/5 h-full flex flex-row justify-center">
           <Link to="/" className="w-auto h-full">
-            {' '}
-            <img className="w-auto h-full" src="http://localhost:3000/swiyt.png" />
-            {' '}
+            <img className="w-auto h-full" src={pub.get("swiytPNG")} />
           </Link>
         </div>
 

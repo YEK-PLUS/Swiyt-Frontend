@@ -4,7 +4,7 @@ export const USER = {
 };
 export const POPUP = {
   login: 'login',
-  singing: 'singnig',
+  singup: 'singup',
   forgotpassword: 'forgotpassword',
   lesson: 'lesson',
 };
