@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation, Trans } from 'react-i18next';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -30,6 +31,7 @@ class menu extends React.Component {
   }
 
   render() {
+    const {t} = this.props;
     return (
       <div style={{ height: '3.5rem' }} className="flex mb-4 px-16 py-2 pt-3 bg-white shadow-md">
 
@@ -47,7 +49,7 @@ class menu extends React.Component {
                 <button type="submit" className="h-full float-right pr-3 focus:outline-none">
                   <FaSearch className="text-blue-400 " />
                 </button>
-                <input style={{ height: '36px' }} type="text" placeholder="Search for Lessons" className="outline-none bg-transparent absolute p-2 pr-8 w-2/5" />
+                <input style={{ height: '36px' }} type="text" placeholder={t('header.searchbar')} className="outline-none bg-transparent absolute p-2 pr-8 w-2/5" />
               </form>
             </div>
           </div>
@@ -61,5 +63,5 @@ class menu extends React.Component {
     );
   }
 }
-
-export default connect(mapStateToProps, mapDispatchToProps)(menu);
+const step_1 = withTranslation('translations')(menu);
+export default connect(mapStateToProps, mapDispatchToProps)(step_1);
