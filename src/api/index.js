@@ -3,7 +3,7 @@ import helpers from '../helper/storage';
 
 const { get, Sget } = helpers;
 export const instance = axios.create({
-  baseURL: 'http://localhost:8080/',
+  baseURL: 'https://swiyt-backend.herokuapp.com/',
   timeout: 5000,
 
 });
@@ -14,6 +14,7 @@ export default async (type, path, body) => {
       Authorization: `Bearer ${get('UserToken') || Sget('UserToken')}`,
     },
   };
+  console.log(body);
   const r = await instance.post(path, body, header);
   return r;
 };
