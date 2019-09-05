@@ -12,7 +12,7 @@ export class Pub {
     return true;
   }
 }
-const url = 'http://localhost:3000';
+const url = 'https://swiyt-frontend.herokuapp.com';
 export const keys = {
   swiytPNG: `${url}/swiyt.png`,
   loadingSVG: `${url}/loading.svg`,
