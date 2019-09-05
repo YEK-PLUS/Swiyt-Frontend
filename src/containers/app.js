@@ -49,6 +49,7 @@ class App extends React.Component {
         </Switch>
         <Login/>
         <Singup/>
+        <Forgotpassword/>
       </div>
     );
   }
