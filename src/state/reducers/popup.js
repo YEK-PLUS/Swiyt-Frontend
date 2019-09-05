@@ -9,7 +9,7 @@ const popup = (state = {
     case POPUP.login:
       return { ...state, login: action.payload };
     case POPUP.singup:
-      return { ...state, singin: action.payload };
+      return { ...state, singup: action.payload };
     case POPUP.forgotpassword:
       return { ...state, forgotpassword: action.payload };
     default:
