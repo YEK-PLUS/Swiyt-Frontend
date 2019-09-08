@@ -7,6 +7,7 @@ import Helpers from '../helper';
 import Home from './home';
 import AllLessons from './allLessons';
 import AllSubscriptions from './allSubscriptions';
+import PublicPage from './publicPage';
 import * as UserActions from '../state/actions/user';
 import {Pub,keys} from '../public';
 import { Redirect } from 'react-router';
@@ -55,6 +56,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/lesson/all" component={AllLessons} />
+          <Route path="/user/:nick" component={PublicPage} />
 
           {
             this.props.logined==true
