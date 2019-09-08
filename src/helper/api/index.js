@@ -1,4 +1,4 @@
 import LoginActions from './auth';
 import CourseActions from './course';
-
-export default { ...LoginActions,...CourseActions };
+import UserActions from './user';
+export default { ...LoginActions,...CourseActions,...UserActions };
