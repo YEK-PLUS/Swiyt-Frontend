@@ -31,6 +31,7 @@ class publicProfile extends React.Component {
           <Referance referance={this.state.data.user_details.referance}/>
         </div>
         <Portfoy portfoy={this.state.data.user_details.portfolio}/>
+        <Courses courses={this.state.data.lessons}/>
       </div>
       :null}
     </div>
