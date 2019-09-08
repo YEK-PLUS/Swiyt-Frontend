@@ -3,7 +3,7 @@ import helpers from '../helper/storage';
 
 const { get, Sget } = helpers;
 export const instance = axios.create({
-  baseURL: 'https://swiyt-backend.herokuapp.com/',
+  baseURL: 'http://localhost:8080/',
   timeout: 5000,
 
 });
