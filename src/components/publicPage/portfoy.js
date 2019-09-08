@@ -45,7 +45,7 @@ export default class Portfoy extends React.Component {
     if(this.props.portfoy){
       return (
         <div className="w-full py-4 bg-gray-200">
-          <div className="w-full text-center text-black text-2xl pb-8">Portfoy</div>
+          <div className="w-full text-center text-black text-2xl">Portfoy</div>
           <div className="w-full px-16 overflow-hidden">
             <Slider {...settings}>
               {this.loadPortfoy().map((a)=>a)}

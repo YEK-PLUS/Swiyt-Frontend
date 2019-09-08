@@ -43,10 +43,11 @@
   transform: translateX(26px);
 }
 .slick-list,.slick-track{
+  cursor: pointer;
   overflow: visible!important;
 }
 .slick-track{
-  margin-bottom:1rem;
+  margin:2rem;
 }
 .slick-slide.slick-active>div>div:focus{
   outline:none;

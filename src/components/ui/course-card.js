@@ -56,7 +56,7 @@ export default class courseCard extends React.Component{
 		}
 		else{
 			return (
-					<a href={this.props.url}>
+					<a href={this.props.url} className={this.props.bol?"":"w-1/5" + " mb-4 button_hover cursor-pointer"}>
 						<Card/>
 					</a>
 			);
