@@ -9,6 +9,7 @@ import AllLessons from './allLessons';
 import AllSubscriptions from './allSubscriptions';
 import * as UserActions from '../state/actions/user';
 import {Pub,keys} from '../public';
+import { Redirect } from 'react-router';
 const { Route } = require('react-router-dom');
 const { Switch } = require('react-router-dom');
 import {Login,Singup,Forgotpassword} from '../components/popup';
@@ -17,6 +18,7 @@ import Footer from '../components/footer';
 global.pub = new Pub(keys);
 const mapStateToProps = (state) => ({
   user: state.user,
+  logined: state.user.logined
 });
 
 function mapDispatchToProps(dispatch) {
@@ -31,7 +33,7 @@ class App extends React.Component {
   }
 
   tryLogin = async () => {
-    const { get, set, TryLogin } = Helpers;
+    const { get, remove, TryLogin } = Helpers;
     const { UserLogined, UserDetails } = this.props;
     const UserToken = get('UserToken') || false;
     if (UserToken) {
@@ -39,6 +41,9 @@ class App extends React.Component {
       UserLogined((!!logined));
       if (logined) {
         UserDetails(logined);
+      }
+      else{
+        remove('UserToken');
       }
     }
   }
@@ -50,7 +55,14 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/lesson/all" component={AllLessons} />
+
+          {
+            this.props.logined==true
+            ?
               <Route path="/lesson/subscriptions" component={AllSubscriptions} />
+            :
+              <Redirect to="/" />
+          }
         </Switch>
         <Login/>
         <Singup/>
