@@ -1,4 +1,4 @@
 import Storage from './storage';
 import Api from './api';
-
-export default { ...Api, ...Storage };
+import MiddleWare from './middleware.js';
+export default { ...Api, ...Storage,...MiddleWare };
