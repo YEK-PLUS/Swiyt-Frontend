@@ -1,4 +1,4 @@
-import { PopulerCourse,Subscriptions,AllPopulerCourses } from '../../api/course';
+import { PopulerCourse,Subscriptions,AllPopulerCourses,AllSubscriptions } from '../../api/course';
 
 const GetPopulerCourses = async () => {
   let response = await PopulerCourse();
@@ -12,4 +12,8 @@ const GetSubscriptions = async () => {
   let response = await Subscriptions();
   return response;
 };
-export default { GetPopulerCourses,GetSubscriptions,GetAllPopulerCourses };
+const GetAllSubscriptions = async () => {
+  let response = await AllSubscriptions();
+  return response;
+};
+export default { GetPopulerCourses,GetSubscriptions,GetAllPopulerCourses,GetAllSubscriptions };
