@@ -36,8 +36,10 @@ class profileBar extends React.Component {
 
         </div>
 
-        <Link to={`/user/${this.props.username}`} className="h-full button_hover w-3/12 px-2 flex items-center justify-center">
-          <div className="rounded-full h-full w-full flex items-center justify-center" />
+        <Link to={`/user/` + this.props.UserDetails.username} className="h-full button_hover w-3/12 px-2 flex items-center justify-center cursor-pointer">
+          <div className="rounded-full h-full w-full flex items-center justify-center">
+              <img className="rounded-full h-auto w-full" src={Object.keys(this.props.UserDetails).length === 0 ? "https://dummyimage.com/300x300/ffffff/fff": this.props.UserDetails.image.cdn.url  }/>
+          </div>
         </Link>
 
       </div>
