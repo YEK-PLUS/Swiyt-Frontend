@@ -25,7 +25,7 @@ class Home extends React.Component {
     return (
       <div>
         <Courses/>
-        {this.props.user.logined ? 'User Logined' : 'User Not Logined'}
+        {this.props.user.logined==true ? 'User Logined' : 'User Not Logined'}
       </div>
     );
   }

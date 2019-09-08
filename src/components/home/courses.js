@@ -47,7 +47,7 @@ class courses extends React.Component{
     }
     this.setState({courses:populerCourses});
 
-    if(this.props.logined){
+    if(this.props.logined==true){
       let subscriptions = await GetSubscriptions();
       let sub_count = false;
       while (!sub_count) {

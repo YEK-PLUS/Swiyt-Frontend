@@ -56,7 +56,7 @@ class menu extends React.Component {
         </div>
 
         <div className="float-right w-4/12 h-full flex flex-wrap flex-row	justify-center">
-          {this.props.logined ? <ProfileBar /> : <LoginBar/>}
+          {this.props.logined==true ? <ProfileBar /> : <LoginBar/>}
         </div>
 
       </div>
