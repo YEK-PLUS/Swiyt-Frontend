@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 import Helpers from '../helper';
 import Home from './home';
+import AllLessons from './allLessons';
 import * as UserActions from '../state/actions/user';
 import {Pub,keys} from '../public';
 const { Route } = require('react-router-dom');
@@ -47,6 +48,7 @@ class App extends React.Component {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/lesson/all" component={AllLessons} />
         </Switch>
         <Login/>
         <Singup/>
