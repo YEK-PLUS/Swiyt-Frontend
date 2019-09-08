@@ -40,11 +40,23 @@ class loginform extends React.Component{
     const logined = await GetToken(username,password);
     UserLogined(!(_.has(logined,'error')));
     if (!(_.has(logined,'error'))) {
-      UserDetails(logined);
       save("UserToken",logined.token);
+      this.tryLogin();
       this.close();
     }
     done(logined);
+  }
+  tryLogin = async () => {
+    const { get, set, TryLogin } = Helpers;
+    const { UserLogined, UserDetails } = this.props;
+    const UserToken = get('UserToken') || false;
+    if (UserToken) {
+      const logined = await TryLogin();
+      UserLogined((!!logined));
+      if (logined) {
+        UserDetails(logined);
+      }
+    }
   }
   showForgotPassword(){
     this.props.deleteLoginPopup();
