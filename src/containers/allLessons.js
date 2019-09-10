@@ -29,19 +29,6 @@ class Home extends React.Component {
   syncCourses = async() => {
     const {GetAllPopulerCourses} = Helpers;
     let AllCourses = await GetAllPopulerCourses();
-    let courseCount = false;
-    while (!courseCount) {
-      if(Object.keys(AllCourses).length < 5){
-        AllCourses.forEach(b=>{
-          if(Object.keys(AllCourses).length < 5){
-            AllCourses.push(b);
-          }
-        })
-      }
-      else{
-        courseCount = true;
-      }
-    }
     this.setState({courses:AllCourses});
   }
   render() {

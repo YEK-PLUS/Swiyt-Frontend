@@ -32,37 +32,9 @@ class courses extends React.Component{
   }
   syncCourses = async() => {
     let populerCourses = await GetPopulerCourses();
-    // let populer_count = false;
-    // while (!populer_count) {
-    //   if(Object.keys(populerCourses).length < 5){
-    //     populerCourses.forEach(b=>{
-    //       if(Object.keys(populerCourses).length < 5){
-    //         populerCourses.push(b);
-    //       }
-    //     })
-    //   }
-    //   else{
-    //     populer_count = true;
-    //   }
-    // }
     this.setState({courses:populerCourses});
-
     if(this.props.logined==true){
       let subscriptions = await GetSubscriptions();
-      // let sub_count = false;
-      // while (!sub_count) {
-      //   if(Object.keys(subscriptions).length != 0 &&
-      //       Object.keys(subscriptions).length < 5){
-      //     subscriptions.forEach(b=>{
-      //       if(Object.keys(subscriptions).length < 5){
-      //         subscriptions.push(b);
-      //       }
-      //     })
-      //   }
-      //   else{
-      //     sub_count = true;
-      //   }
-      // }
       this.setState({subs:subscriptions});
     }
   }
