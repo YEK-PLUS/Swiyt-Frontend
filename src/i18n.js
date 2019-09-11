@@ -29,7 +29,7 @@ if (process && !process.release) {
   i18n
     .use(XHR)
     .use(initReactI18next)
-    .use(LanguageDetector)
+    .use(LanguageDetector);
 }
 
 // initialize if not already initialized

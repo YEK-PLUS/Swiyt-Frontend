@@ -16,4 +16,6 @@ export const AllSubscriptions = async () => {
   const response = await API('post', '/course/subscriptions');
   return response;
 };
-export default { PopulerCourse,Subscriptions,AllPopulerCourses,AllSubscriptions };
+export default {
+  PopulerCourse, Subscriptions, AllPopulerCourses, AllSubscriptions,
+};

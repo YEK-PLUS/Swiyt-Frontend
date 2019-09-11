@@ -2,7 +2,7 @@ import { USER } from '../types';
 
 const { LOGINED, SAVEUSERDETAILS } = USER;
 const UserDefaultState = {
-  logined: "waiting",
+  logined: 'waiting',
   UserDetails: {},
 };
 const User = (state = UserDefaultState, action) => {
