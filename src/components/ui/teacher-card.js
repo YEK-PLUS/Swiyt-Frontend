@@ -41,7 +41,7 @@ export default class courseCard extends React.Component{
 				<div className="my-2 px-8">
 					{this.props.courses.map((course) => {
 						return (
-							<Link key={course.uid} to={createUrl(`/lesson/`+this.props.teacher+`/`+course.name)}>
+							<Link key={course.uid} to={createUrl(`/lesson/`+this.props.username+`/`+course.name)}>
 								<Button
 									extend={`w-full my-2`}
 									onClick={(e)=>{return true}}
@@ -57,7 +57,7 @@ export default class courseCard extends React.Component{
 			</div>
 		);
 		return (
-			<Link to={(createUrl(`/user/`+this.props.teacher))} className={this.props.bol?"":"w-1/5" + " mb-4 button_hover cursor-pointer"}>
+			<Link to={(createUrl(`/user/`+this.props.username))} className={this.props.bol?"":"w-1/5" + " mb-4 button_hover cursor-pointer"}>
 				<Card/>
 			</Link>
 		);
