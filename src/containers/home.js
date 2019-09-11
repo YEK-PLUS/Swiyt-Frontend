@@ -21,11 +21,12 @@ class Home extends React.Component {
   }
 
   render() {
-    const {Courses,Teacher} = HomeComponents;
+    const {Courses,Teacher,References} = HomeComponents;
     return (
       <div>
         <Courses/>
         <Teacher/>
+        <References/>
         {this.props.user.logined==true ? 'User Logined' : 'User Not Logined'}
       </div>
     );
