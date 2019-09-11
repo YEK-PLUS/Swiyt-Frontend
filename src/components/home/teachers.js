@@ -39,9 +39,10 @@ class teachers extends React.Component{
               image={user.image.cdn.url}
               teacher={user.realname||user.username}
               courses={user.lessons}
-              key={`b`}/>
+              username={user.username}
+              key={user.uid}/>
           ):
-          this.state.loading.map(user=> <Teacher courses={[]}/> )
+          this.state.loading.map(user=> <Teacher key={user} courses={[]}/> )
         }
 
 
