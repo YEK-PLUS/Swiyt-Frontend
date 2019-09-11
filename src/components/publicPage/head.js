@@ -8,7 +8,7 @@ class Head extends React.Component{
   }
   loadConnections(){
     let a = [];
-    let b = this.props.data.user_details.links;
+    let b = (this.props.data.user_details?this.props.data.user_details.links : {});
     for (let v in b) {
       switch (v) {
         case "facebook":
@@ -34,10 +34,12 @@ class Head extends React.Component{
 
   }
   render(){
-    const {banner,picture,title} = this.props.data.user_details;
+    const {banner,title} = this.props.data.user_details||[];
     const {username,realname} = this.props.data;
-
-    const hasBanner = ( Object.keys(banner).length >= 0 &&
+    const picture = this.props.data.image;
+    console.log(picture);
+    const hasBanner = ( banner &&
+                        Object.keys(banner).length >= 0 &&
                         Object.keys(banner.cdn).length >= 0 &&
                         banner.cdn.url);
     return (
