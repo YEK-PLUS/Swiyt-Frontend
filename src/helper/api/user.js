@@ -1,4 +1,4 @@
-import { UserDetails,PopulerTeachers } from '../../api/user';
+import { UserDetails,PopulerTeachers,AllPopulerTeachers } from '../../api/user';
 
 const GetUserDetails = async (username) => {
   let response = await UserDetails(username);
@@ -8,4 +8,8 @@ const GetPopulerTeachers = async () => {
   let response = await PopulerTeachers();
   return response;
 };
-export default { GetUserDetails,GetPopulerTeachers };
+const GetAllPopulerTeachers = async () => {
+  let response = await AllPopulerTeachers();
+  return response;
+};
+export default { GetUserDetails,GetPopulerTeachers,GetAllPopulerTeachers };
