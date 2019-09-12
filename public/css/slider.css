@@ -1,16 +1,16 @@
-.switch {
+.public-page .switch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
   outline: none;
 }
-.switch input {
+.public-page .switch input {
   position: absolute;
   top: -99999px;
   left: -99999px;
 }
-.slider {
+.public-page .slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -22,7 +22,7 @@
   transition: .4s;
   border-radius: 34px;
 }
-.slider:before {
+.public-page .slider:before {
   position: absolute;
   content: "";
   height: 26px;
@@ -34,29 +34,29 @@
   transition: .4s;
   border-radius: 50%;
 }
-.switch input:checked + .slider {
+.public-page .switch input:checked + .slider {
   background-color: #e53e3e;
 }
-.switch input:checked + .slider:before {
+.public-page .switch input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
-.slick-list,.slick-track{
+.public-page .slick-list,.slick-track{
   cursor: pointer;
   overflow: visible!important;
 }
-.slick-track{
+.public-page .slick-track{
   margin:2rem;
 }
-.slick-slide.slick-active>div>div:focus{
+.public-page .slick-slide.slick-active>div>div:focus{
   outline:none;
 }
-.slick-arrow.slick-prev{
+.public-page .slick-arrow.slick-prev{
   z-index: 4;
   transform: translateX(-4rem);
 }
-.slick-arrow.slick-prev:before{
+.public-page .slick-arrow.slick-prev:before{
   content: '<';
   border-radius: 100%;
   padding:1.5rem;
@@ -64,15 +64,39 @@
   background:black;
   font-weight: 700;
 }
-.slick-arrow.slick-next{
+.public-page .slick-arrow.slick-next{
   z-index: 4;
   transform: translateX(1rem);
 }
-.slick-arrow.slick-next:before{
+.public-page .slick-arrow.slick-next:before{
   content: '>';
   border-radius: 100%;
   padding:1.5rem;
   padding-right: 2rem;
   background:black;
   font-weight: 700;
+}
+.comments-page .slick-dots{
+  position: relative!important;
+}
+.comments-page .slick-dots>li{
+  height: unset!important;
+  width: unset!important;
+  margin: 0 10px;
+}
+.comments-page .slick-dots>li>button{
+  height: unset!important;
+  width: unset!important;
+  padding: unset!important;
+}
+.comments-page .slick-dots>li>button:before{
+  position: relative;
+  height: 1rem;
+  width: 1rem;
+  line-height: 1rem;
+  font-size: 1rem;
+  color: #f56565;
+}
+.comments-page .slick-dots>li.slick-active>button:before{
+  color: #9b2c2c;
 }
