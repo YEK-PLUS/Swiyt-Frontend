@@ -23,15 +23,16 @@ class teachers extends React.Component{
 		<div className="w-full flex flex-wrap flex-col py-4 px-8 mt-4">
 
       <div className="w-full flex flex-wrap flex-row justify-between">
-        <div className="text-gray-600">Populer Ogretmenler</div>
-          <Link to={`/teachers/populer`} className="text-gray-800 cursor-pointer">
-            <span>Tümünü Gör</span>
-          </Link>
+        <div className="w-full text-center text-gray-600 font-black	text-4xl">
+          Referanslarimiz
+        </div>
       </div>
 
 			<div className="w-full pl-4 pt-8 flex flex-wrap flex-row">
         {this.state.references.map(reference =>
-            <div>{reference.name}</div>
+            <a href={reference.url} className={`w-1/4 flex flex-col`}>
+              <img style={{filter:`grayscale(100%)`}} className={`w-full h-auto`} src={reference.image.cdn.url}/>
+            </a>
           )}
 
 
