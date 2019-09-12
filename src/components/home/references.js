@@ -30,7 +30,7 @@ class teachers extends React.Component{
 
 			<div className="w-full pl-4 pt-8 flex flex-wrap flex-row">
         {this.state.references.map(reference =>
-            <a href={reference.url} className={`w-1/4 flex flex-col`}>
+            <a key={`reference-`+reference.id} href={reference.url} className={`w-1/4 flex flex-col`}>
               <img style={{filter:`grayscale(100%)`}} className={`w-full h-auto`} src={reference.image.cdn.url}/>
             </a>
           )}
