@@ -23,9 +23,9 @@ class teachers extends React.Component{
 		<div className="w-full flex flex-wrap flex-col py-4 px-8 mt-4">
 
       <div className="w-full flex flex-wrap flex-row justify-between">
-        <div className="w-full text-center text-gray-600 font-black	text-4xl">
+        {_.size(this.state.references) !== 0 ? <div className="w-full text-center text-gray-600 font-black	text-4xl">
           Referanslarimiz
-        </div>
+        </div>:null}
       </div>
 
 			<div className="w-full pl-4 pt-8 flex flex-wrap flex-row">

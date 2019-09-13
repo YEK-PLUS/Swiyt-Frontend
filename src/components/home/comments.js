@@ -55,9 +55,9 @@ class teachers extends React.Component{
 		<div className="w-full flex flex-wrap flex-col py-4 px-8 mt-4">
 
       <div className="w-full flex flex-wrap flex-row justify-between">
-        <div className="w-full text-center text-gray-600 font-black	text-4xl">
+        {_.size(this.state.comments) !== 0 ? <div className="w-full text-center text-gray-600 font-black	text-4xl">
           Kullanici geri donusleri
-        </div>
+        </div>:null}
       </div>
       <div className="w-full px-16 comments-page">
 			     <Slider {...settings} >
