@@ -9,6 +9,7 @@ import AllLessons from './allLessons';
 import AllSubscriptions from './allSubscriptions';
 import PopulerTeachers from './populerTeachers';
 import PublicPage from './publicPage';
+import PublicClass from './publicClass';
 import * as UserActions from '../state/actions/user';
 import {Pub,keys} from '../public';
 import { Redirect } from 'react-router';
@@ -59,6 +60,7 @@ class App extends React.Component {
           <Route path="/lesson/all" component={AllLessons} />
           <Route path="/teachers/populer" component={PopulerTeachers} />
           <Route path="/user/:nick" component={PublicPage} />
+          <Route path="/lesson/:nick/:course" component={PublicClass} />
 
           {
             this.props.logined==true

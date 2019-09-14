@@ -16,6 +16,14 @@ export const AllSubscriptions = async () => {
   const response = await API('post', '/course/subscriptions');
   return response;
 };
+export const Course = async (adminNick,courseName) => {
+  const response = await API('post', '/course/',{user:adminNick,course:courseName});
+  return response;
+};
+export const CourseAuth = async (adminNick,courseName) => {
+  const response = await API('post', '/course/auth',{user:adminNick,course:courseName});
+  return response;
+};
 export default {
-  PopulerCourse, Subscriptions, AllPopulerCourses, AllSubscriptions,
+  PopulerCourse, Subscriptions, AllPopulerCourses, AllSubscriptions,Course,CourseAuth
 };
