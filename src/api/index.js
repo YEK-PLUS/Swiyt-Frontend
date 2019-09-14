@@ -3,7 +3,7 @@ import helpers from '../helper/storage';
 
 const { get, Sget } = helpers;
 export const instance = axios.create({
-  baseURL: 'http://localhost:8080/',
+  baseURL: 'http://159.146.28.45:8080/',
   timeout: 5000,
 
 });

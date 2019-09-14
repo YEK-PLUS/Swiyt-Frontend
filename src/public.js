@@ -12,7 +12,7 @@ export class Pub {
     return true;
   }
 }
-const url = 'http://localhost:3000';
+const url = 'http://159.146.28.45';
 export const keys = {
   swiytPNG: `${url}/swiyt.png`,
   loadingSVG: `${url}/loading.svg`,
