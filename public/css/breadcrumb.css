@@ -1,0 +1,10 @@
+.breadcrumb>span{
+  display: flex;
+  flex-direction: row;
+}
+.breadcrumb>:not(:last-child):after{
+  content: '>';
+  display: block;
+  margin: 0 5px;
+  color: #4fd1c5;
+}
