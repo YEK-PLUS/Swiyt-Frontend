@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Teacher from '../components/ui/teacher-card';
 import Helpers from '../helper';
+import * as ClassComponents from '../components/classPage';
 import _ from 'lodash';
 const {GetCourse,GetCourseWithAuth} = Helpers;
 
@@ -14,40 +15,48 @@ const mapStateToProps = (state) => ({
 });
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(UserActions, dispatch);
+  return bindActionCreators({}, dispatch);
 }
 
 class Course extends React.Component{
   constructor(props){
     super(props);
-
-  }
-  componentDidMount(){
-    const course = {
-      adminNick : this.props.match.params.nick,
-      courseName : this.props.match.params.course
-    }
-    this.localParams = course;
     this.getCourse();
   }
   state = {
     course:{},
   }
   getCourse = async() => {
+    const courseParams = {
+      adminNick : this.props.match.params.nick,
+      courseName : this.props.match.params.course
+    }
     const { GetCourse, GetCourseWithAuth } = Helpers;
-    const {adminNick,courseName} = this.localParams;
-    if(this.props.logined){
-      let course = await GetCourseWithAuth(adminNick,courseName);
+    const {adminNick,courseName} = courseParams;
+    let course;
+    if(this.props.logined == true){
+      course = await GetCourseWithAuth(adminNick,courseName);
     }
     else{
-      let course = await GetCourse(adminNick,courseName);
+      course = await GetCourse(adminNick,courseName);
     }
+    console.log(await course)
+    this.setState({course})
   }
   render(){
+    const {Header} = ClassComponents;
     return (
-      <div>a</div>
+      <div>
+        {_.has(this.state.course,'uid')?
+        <Header
+          thub={this.state.course.lessons[0].banner.cdn.url}
+          category={this.state.course.lessons[0].category}
+          title={this.state.course.lessons[0].name}
+          />
+        :null}
+      </div>
     );
   };
 
 }
-export default (Course);
+export default connect(mapStateToProps, mapDispatchToProps)(Course);
