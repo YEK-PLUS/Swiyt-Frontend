@@ -78,6 +78,8 @@ i18n
             <title>Welcome to Razzle</title>
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="http://159.146.28.45/index.css">
+            <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
             <script src="${assets.client.js}" defer></script>
             <script>
               window.__PRELOADED_SATATE__ = ${serialize(finalState)}

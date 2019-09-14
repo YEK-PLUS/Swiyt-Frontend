@@ -1,7 +1,5 @@
 import React from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import CourseCard from '../ui/course-card';
 export default class Portfoy extends React.Component {
   constructor(props){
