@@ -22,22 +22,53 @@ class Header extends React.Component {
 
 
     return (
-      <div className={`w-auto h-auto flex flex-row text-teal-800 breadcrumb`}>
+      <div className={`w-auto h-auto flex flex-row text-black breadcrumb`}>
         {this.cats.reverse().map(cat => <span>{cat}</span>)}
       </div>
     );
   }
+  loadTags(){
+    return (
+      <div>Tag Sistemi Bekleniyor</div>
+    );
+  }
+  loadStar(){
+    return (
+      <div>Puan: ****</div>
+    );
+  }
+  loadStudent(){
+    return (
+      <div className={`mx-4`}>X Ogrenci</div>
+    );
+  }
   render() {
     return (
-      <div className="w-full h-auto flex flex-col px-8 bg-white">
+      <div className={`px-20 flex flex-col bg-white`}>
         {this.catLoad()}
-        <div className={`w-full px-16 my-8 flex flex-row justify-center`}>
-          <div className={`w-1/3 h-auto rounded-lg`}>
+        <div className={`w-full px-8 mt-4 flex flex-row`}>
+
+          <div className={`w-1/4 h-auto rounded-lg`}>
             <img className={`w-full h-auto rounded-lg`} src={this.props.thub}/>
           </div>
-          <div className={`w-auto p-4 flex flex-col`}>
+
+          <div className={`w-3/4 px-4 pt-3 flex flex-col`}>
+
             <div className={`text-xl text-red-500`}>{this.props.title}</div>
-            <div>Tag Sistemi Bekleniyor</div>
+
+            {this.loadTags()}
+
+            <div className={`w-full flex flex-row justify-start items-center`}>
+              {this.loadStar()}
+              {this.loadStudent()}
+            </div>
+
+          </div>
+
+        </div>
+        <div style={{top:`-2rem`}} className={`relative flex flex-row justify-end items-center w-full  border-b-4 border-red-500`}>
+          <div className={`px-6 py-4 bg-red-500 rounded-t`}>
+            Sepete Ekle
           </div>
         </div>
       </div>
