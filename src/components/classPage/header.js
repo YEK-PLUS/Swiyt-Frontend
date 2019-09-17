@@ -44,7 +44,7 @@ class Header extends React.Component {
   }
   loadClassInfo(){
     return(
-      <div className={`z-10`}>Egitmen : {this.props.teacher}</div>
+      <div className={`z-10 w-1/2`}>Egitmen : {this.props.teacher}</div>
     );
   }
   render() {
@@ -72,8 +72,8 @@ class Header extends React.Component {
           </div>
 
         </div>
-        <div style={{top:`-2rem`}} className={`relative flex flex-row justify-end items-center w-full text-white border-b-4 border-red-500`}>
-          <div className={`px-6 py-4 bg-red-500 animation hover:bg-red-400 hover:bg-gray-100 rounded-t cursor-pointer`}>
+        <div style={{top:`-1rem`}} className={`relative flex flex-row justify-end items-center w-full text-white border-b-4 border-red-500`}>
+          <div className={`px-6 py-2 bg-red-500 animation hover:bg-red-400 hover:bg-gray-100 rounded-t cursor-pointer`}>
             Sepete Ekle
           </div>
         </div>
