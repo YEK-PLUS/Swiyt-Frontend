@@ -1,4 +1,4 @@
-.button_hover,.slick-slide{
+.button_hover,.animation,.slick-slide{
   transition: .5s all ease;
 }
 .button_hover:hover,.slick-slide:hover{

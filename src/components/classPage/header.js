@@ -66,8 +66,8 @@ class Header extends React.Component {
           </div>
 
         </div>
-        <div style={{top:`-2rem`}} className={`relative flex flex-row justify-end items-center w-full  border-b-4 border-red-500`}>
-          <div className={`px-6 py-4 bg-red-500 rounded-t`}>
+        <div style={{top:`-2rem`}} className={`relative flex flex-row justify-end items-center w-full text-white cursor-pointer border-b-4 border-red-500`}>
+          <div className={`px-6 py-4 bg-red-500 animation hover:bg-red-400 hover:bg-gray-100 rounded-t`}>
             Sepete Ekle
           </div>
         </div>
