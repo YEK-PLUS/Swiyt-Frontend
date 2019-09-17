@@ -52,6 +52,7 @@ class Course extends React.Component{
           thub={this.state.course.lessons[0].banner.cdn.url}
           category={this.state.course.lessons[0].category}
           title={this.state.course.lessons[0].name}
+          teacher={this.state.course.realname}
           />
         :null}
       </div>

@@ -29,7 +29,7 @@ class Header extends React.Component {
   }
   loadTags(){
     return (
-      <div>Tag Sistemi Bekleniyor</div>
+      <div className={`my-3`}>Tag Sistemi Bekleniyor</div>
     );
   }
   loadStar(){
@@ -40,6 +40,11 @@ class Header extends React.Component {
   loadStudent(){
     return (
       <div className={`mx-4`}>X Ogrenci</div>
+    );
+  }
+  loadClassInfo(){
+    return(
+      <div className={`z-10`}>Egitmen : {this.props.teacher}</div>
     );
   }
   render() {
@@ -58,16 +63,17 @@ class Header extends React.Component {
 
             {this.loadTags()}
 
-            <div className={`w-full flex flex-row justify-start items-center`}>
+            <div className={`w-full my-3 flex flex-row justify-start items-center`}>
               {this.loadStar()}
               {this.loadStudent()}
             </div>
+            {this.loadClassInfo()}
 
           </div>
 
         </div>
-        <div style={{top:`-2rem`}} className={`relative flex flex-row justify-end items-center w-full text-white cursor-pointer border-b-4 border-red-500`}>
-          <div className={`px-6 py-4 bg-red-500 animation hover:bg-red-400 hover:bg-gray-100 rounded-t`}>
+        <div style={{top:`-2rem`}} className={`relative flex flex-row justify-end items-center w-full text-white border-b-4 border-red-500`}>
+          <div className={`px-6 py-4 bg-red-500 animation hover:bg-red-400 hover:bg-gray-100 rounded-t cursor-pointer`}>
             Sepete Ekle
           </div>
         </div>
