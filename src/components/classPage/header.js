@@ -22,7 +22,7 @@ class Header extends React.Component {
 
 
     return (
-      <div className={`w-auto h-auto flex flex-row text-black breadcrumb`}>
+      <div className={`w-full h-auto flex flex-row text-black breadcrumb`}>
         {this.cats.reverse().map(cat => <span>{cat}</span>)}
       </div>
     );
@@ -49,12 +49,13 @@ class Header extends React.Component {
   }
   render() {
     return (
-      <div className={`px-20 flex flex-col bg-white`}>
+      <div className={`my-2 flex flex-col bg-white border-b-2 border-red-500 shoplist`}>
         {this.catLoad()}
         <div className={`w-full px-8 mt-4 flex flex-row`}>
 
           <div className={`w-1/4 h-auto rounded-lg`}>
             <img className={`w-full h-auto rounded-lg`} src={this.props.thub}/>
+            <div className={`w-full h-8`}></div>
           </div>
 
           <div className={`w-3/4 px-4 pt-3 flex flex-col`}>
@@ -71,11 +72,6 @@ class Header extends React.Component {
 
           </div>
 
-        </div>
-        <div style={{top:`-1rem`}} className={`relative flex flex-row justify-end items-center w-full text-white border-b-4 border-red-500`}>
-          <div className={`px-6 py-2 bg-red-500 animation hover:bg-red-400 hover:bg-gray-100 rounded-t cursor-pointer`}>
-            Sepete Ekle
-          </div>
         </div>
       </div>
     );
