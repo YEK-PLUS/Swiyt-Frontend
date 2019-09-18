@@ -44,16 +44,19 @@ class Course extends React.Component{
     this.setState({course})
   }
   render(){
-    const {Header} = ClassComponents;
+    const {Header,Desc} = ClassComponents;
     return (
       <div className={`px-20 bg-gray-100`}>
         {_.has(this.state.course,'uid')?
-        <Header
-          thub={this.state.course.lessons[0].banner.cdn.url}
-          category={this.state.course.lessons[0].category}
-          title={this.state.course.lessons[0].name}
-          teacher={this.state.course.realname}
-          />
+          <div>
+            <Header
+              thub={this.state.course.lessons[0].banner.cdn.url}
+              category={this.state.course.lessons[0].category}
+              title={this.state.course.lessons[0].name}
+              teacher={this.state.course.realname}
+              />
+            <Desc desc={this.state.course.lessons[0].description} />
+          </div>
         :null}
       </div>
     );
