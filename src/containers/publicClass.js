@@ -44,7 +44,7 @@ class Course extends React.Component{
     this.setState({course})
   }
   render(){
-    const {Header,Desc} = ClassComponents;
+    const {Header,Desc,Comment} = ClassComponents;
     return (
       <div className={`px-20 bg-gray-100`}>
         {_.has(this.state.course,'uid')?
@@ -56,6 +56,7 @@ class Course extends React.Component{
               teacher={this.state.course.realname}
               />
             <Desc desc={this.state.course.lessons[0].description} />
+            <Comment comments={this.state.course.lessons[0].comments} />
           </div>
         :null}
       </div>
