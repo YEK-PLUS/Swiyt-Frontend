@@ -1,5 +1,5 @@
 import {
-  PopulerCourse, Subscriptions, AllPopulerCourses, AllSubscriptions,Course
+  PopulerCourse, Subscriptions, AllPopulerCourses, AllSubscriptions,Course,CourseAuth
 } from '../../api/course';
 
 const GetPopulerCourses = async () => {
