@@ -9,12 +9,18 @@
   justify-content: flex-end;
 }
 .shoplist::after{
-  content: 'Sepete Ekle';
   display: block;
+  color:white;
   width: fit-content;
   padding:  .5rem 1.5rem;
   background: #f56565;
   cursor: pointer;
   position: absolute;
   border-radius: 5px 5px 0 0;
+}
+.shoplist.add::after{
+  content: 'Sepete Ekle';
+}
+.shoplist.del::after{
+  content: 'Sepetten Cikart';
 }
