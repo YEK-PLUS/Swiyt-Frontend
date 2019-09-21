@@ -67,8 +67,10 @@ class Header extends React.Component {
   }
   render() {
     return (
-      <div className={`my-2 flex flex-col bg-white border-b-2 border-red-500 shoplist ` + (!this.props.wishList ? `add` : `del`)}>
-        {this.catLoad()}
+      <div onClick={this.wishList} className={`my-2 flex flex-col bg-white border-b-2 border-red-500 pointer-events-none shoplist ` + (!this.state.wishList ? `add` : `del`)}>
+        <div className={`w-full`}>
+          {this.catLoad()}
+        </div>
         <div className={`w-full px-8 mt-4 flex flex-row`}>
 
           <div className={`w-1/4 h-auto rounded-lg`}>
