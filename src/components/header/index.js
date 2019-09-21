@@ -63,5 +63,4 @@ class menu extends React.Component {
     );
   }
 }
-const step_1 = withTranslation('translations')(menu);
-export default connect(mapStateToProps, mapDispatchToProps)(step_1);
+export default connect(mapStateToProps, mapDispatchToProps)(withTranslation('translations')(menu));
