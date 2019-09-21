@@ -6,6 +6,7 @@ import { MdStar,MdStarHalf,MdStarBorder } from 'react-icons/md';
 import _ from 'lodash';
 import Button from '../ui/button';
 import * as PopupActions from '../../state/actions/popup';
+import Helpers from '../../helper';
 
 const mapStateToProps = (state) => ({
   logined: state.user.logined,
@@ -71,6 +72,13 @@ class Header extends React.Component {
     );
   }
   wishList = async() =>{
+    if(this.props.logined!=true){
+      return this.props.addLoginPopup();
+    }
+    const {ChangeWishList} = Helpers;
+    const change = await ChangeWishList(this.props.lessonUid);
+    this.setState({wishList:(!this.state.wishList)})
+
   }
   render() {
     return (

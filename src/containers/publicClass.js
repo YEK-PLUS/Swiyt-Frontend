@@ -60,6 +60,7 @@ class Course extends React.Component{
               rate={this.state.course.lessons[0].rate}
               rateCount={_.size(this.state.course.lessons[0].comments)}
               teacher={this.state.course.realname}
+              lessonUid={this.state.course.lessons[0].uid}
               wishList={(this.state.course.lessons[0].wishList?this.state.course.lessons[0].wishList.wish_list: false)}
               />
             <Desc desc={this.state.course.lessons[0].description} />
