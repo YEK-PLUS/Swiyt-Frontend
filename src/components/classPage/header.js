@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { MdStar,MdStarHalf } from 'react-icons/md';
 import _ from 'lodash';
 import Button from '../ui/button';
 import * as PopupActions from '../../state/actions/popup';
@@ -34,7 +35,16 @@ class Header extends React.Component {
   }
   loadStar(){
     return (
-      <div>Puan: ****</div>
+      <div className={`flex flex-row justify-start items-center`}>
+        <div>Puan:</div>
+        {[...Array(~~this.props.rate)].map((x, i) =>
+          <MdStar color={`#ecc94b`} key={i}/>
+        )}
+        {this.props.rate < 5 && this.props.rate - ~~this.props.rate >= 0.5 ?
+          <MdStarHalf color={`#ecc94b`}/>
+        :null}
+        <div>({this.props.rateCount})</div>
+      </div>
     );
   }
   loadStudent(){
