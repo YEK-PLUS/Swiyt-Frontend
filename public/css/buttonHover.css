@@ -9,6 +9,7 @@
   justify-content: flex-end;
 }
 .shoplist::after{
+  pointer-events: all;
   display: block;
   color:white;
   width: fit-content;

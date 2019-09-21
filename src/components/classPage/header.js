@@ -18,6 +18,7 @@ class Header extends React.Component {
       cats.push(catList.name);
     }
     this.cats = cats
+    this.wishList = this.wishList.bind(this);
   }
   catLoad(){
 
@@ -59,6 +60,8 @@ class Header extends React.Component {
     return(
       <div className={`z-10 w-1/2`}>Egitmen : {this.props.teacher}</div>
     );
+  }
+  wishList = async() =>{
   }
   render() {
     return (
