@@ -25,6 +25,7 @@ class Course extends React.Component{
   }
   state = {
     course:{},
+    loadedAuth : false
   }
   getCourse = async() => {
     const courseParams = {
@@ -35,15 +36,17 @@ class Course extends React.Component{
     const {adminNick,courseName} = courseParams;
     let course;
     if(this.props.logined == true){
-      course = await GetCourseWithAuth(adminNick,courseName);
+      this.setState({course : await GetCourseWithAuth(adminNick,courseName)})
     }
-    else{
-      course = await GetCourse(adminNick,courseName);
+    else if (this.props.logined != 'loading'){
+      this.setState({course : await GetCourse(adminNick,courseName)})
     }
-    console.log(await course)
-    this.setState({course})
   }
   render(){
+    if(this.props.logined == true && !this.state.loadedAuth){
+      this.setState({loadedAuth:true})
+      this.getCourse();
+    }
     const {Header,Desc,Comment} = ClassComponents;
     return (
       <div className={`px-20 bg-gray-100`}>
@@ -57,6 +60,7 @@ class Course extends React.Component{
               rate={this.state.course.lessons[0].rate}
               rateCount={_.size(this.state.course.lessons[0].comments)}
               teacher={this.state.course.realname}
+              wishList={(this.state.course.lessons[0].wishList?this.state.course.lessons[0].wishList.wish_list: false)}
               />
             <Desc desc={this.state.course.lessons[0].description} />
             <Comment comments={this.state.course.lessons[0].comments} />
