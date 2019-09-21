@@ -24,7 +24,7 @@ class Header extends React.Component {
 
     return (
       <div className={`w-full h-auto flex flex-row text-black breadcrumb`}>
-        {this.cats.reverse().map(cat => <span>{cat}</span>)}
+        {this.cats.reverse().map(cat => <span key={cat}>{cat}</span>)}
       </div>
     );
   }

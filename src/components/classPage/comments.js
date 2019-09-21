@@ -13,7 +13,7 @@ class Comments extends React.Component {
       <div className={`w-full h-auto flex flex-col px-4 my-4 shadow`}>
         <div className={`w-full h-auto py-3 border-b border-gray-100 text-black font-black`}>Yorumlar</div>
         <div className={`w-full h-auto py-3 flex flex-row flex-wrap justify-between`}>
-          {this.props.comments.map(comment => <div className={`w-2/5 mx-3`}>
+          {this.props.comments.map(comment => <div key={comment.uid} className={`w-2/5 mx-3`}>
             <Comment
               name={comment.user.realname}
               image={comment.user.image.cdn.url}
