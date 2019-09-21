@@ -17,15 +17,17 @@ class Header extends React.Component {
       catList = catList.parent;
       cats.push(catList.name);
     }
-    this.cats = cats
+    this.cats = cats.reverse();
     this.wishList = this.wishList.bind(this);
+    this.state = {
+      wishList:this.props.wishList
+    }
   }
   catLoad(){
-
-
+    let {cats} = this;
     return (
       <div className={`w-full h-auto flex flex-row text-black breadcrumb`}>
-        {this.cats.reverse().map(cat => <span key={cat}>{cat}</span>)}
+        {cats.map(cat => <span key={cat}>{cat}</span>)}
       </div>
     );
   }
