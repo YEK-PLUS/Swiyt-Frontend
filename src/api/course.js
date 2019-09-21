@@ -24,6 +24,10 @@ export const CourseAuth = async (adminNick,courseName) => {
   const response = await API('post', '/course/auth',{user:adminNick,course:courseName});
   return response;
 };
+export const WishList = async (lessonUid) => {
+  const response = await API('post', '/course/wishList',{lessonUid});
+  return response;
+};
 export default {
-  PopulerCourse, Subscriptions, AllPopulerCourses, AllSubscriptions,Course,CourseAuth
+  PopulerCourse, Subscriptions, AllPopulerCourses, AllSubscriptions,Course,CourseAuth,WishList
 };

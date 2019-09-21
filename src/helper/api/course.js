@@ -1,5 +1,6 @@
 import {
-  PopulerCourse, Subscriptions, AllPopulerCourses, AllSubscriptions,Course,CourseAuth
+  PopulerCourse, Subscriptions, AllPopulerCourses,
+  AllSubscriptions,Course,CourseAuth,WishList
 } from '../../api/course';
 
 const GetPopulerCourses = async () => {
@@ -26,6 +27,11 @@ const GetCourseWithAuth = async (adminNick,courseName) => {
   const response = await CourseAuth(adminNick,courseName);
   return response;
 };
+const ChangeWishList = async (lessonUid) => {
+  const response = await WishList(lessonUid);
+  return response;
+};
 export default {
-  GetPopulerCourses, GetSubscriptions, GetAllPopulerCourses, GetAllSubscriptions,GetCourse, GetCourseWithAuth
+  GetPopulerCourses, GetSubscriptions, GetAllPopulerCourses,
+  GetAllSubscriptions,GetCourse, GetCourseWithAuth,ChangeWishList
 };
