@@ -7,6 +7,13 @@ import _ from 'lodash';
 import Button from '../ui/button';
 import * as PopupActions from '../../state/actions/popup';
 
+const mapStateToProps = (state) => ({
+  logined: state.user.logined,
+});
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(PopupActions, dispatch);
+}
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -98,4 +105,4 @@ class Header extends React.Component {
   }
 }
 
-export default (Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
