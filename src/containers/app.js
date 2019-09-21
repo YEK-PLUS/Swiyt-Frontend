@@ -43,12 +43,13 @@ class App extends React.Component {
       const logined = await TryLogin();
       UserLogined((!!logined));
       if (logined) {
-        UserDetails(logined);
+        return UserDetails(logined);
       }
       else{
-        remove('UserToken');
+        return remove('UserToken');
       }
     }
+    return UserLogined(false);
   }
 
   render() {
