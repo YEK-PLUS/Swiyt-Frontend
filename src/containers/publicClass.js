@@ -53,6 +53,7 @@ class Course extends React.Component{
               thub={this.state.course.lessons[0].banner.cdn.url}
               category={this.state.course.lessons[0].category}
               title={this.state.course.lessons[0].name}
+              studentCount={this.state.course.lessons[0].subscriptions}
               rate={this.state.course.lessons[0].rate}
               rateCount={_.size(this.state.course.lessons[0].comments)}
               teacher={this.state.course.realname}

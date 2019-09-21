@@ -49,7 +49,7 @@ class Header extends React.Component {
   }
   loadStudent(){
     return (
-      <div className={`mx-4`}>X Ogrenci</div>
+      <div className={`mx-4`}>{this.props.studentCount} Ogrenci</div>
     );
   }
   loadClassInfo(){
