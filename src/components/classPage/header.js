@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { MdStar,MdStarHalf } from 'react-icons/md';
+import { MdStar,MdStarHalf,MdStarBorder } from 'react-icons/md';
 import _ from 'lodash';
 import Button from '../ui/button';
 import * as PopupActions from '../../state/actions/popup';
@@ -43,6 +43,9 @@ class Header extends React.Component {
         {this.props.rate < 5 && this.props.rate - ~~this.props.rate >= 0.5 ?
           <MdStarHalf color={`#ecc94b`}/>
         :null}
+        {[...Array(5 - ~~this.props.rate)].map((x, i) =>
+          <MdStarBorder key={i} color={`#ecc94b`}/>
+        )}
         <div>({this.props.rateCount})</div>
       </div>
     );
