@@ -27,10 +27,13 @@ class Header extends React.Component {
     }
     this.cats = cats.reverse();
     this.wishList = this.wishList.bind(this);
-    this.state = {
-      wishList:this.props.wishList
-    }
+    this.state = {wishLis:this.props.wishList}
   }
+  componentWillReceiveProps(nextProps) {
+  if (nextProps.wishList !== this.state.wishList) {
+    this.setState({ wishList: nextProps.wishList });
+  }
+}
   catLoad(){
     let {cats} = this;
     return (
@@ -77,12 +80,12 @@ class Header extends React.Component {
     }
     const {ChangeWishList} = Helpers;
     const change = await ChangeWishList(this.props.lessonUid,!this.state.wishList);
-    this.setState({wishList:(!this.state.wishList)})
-
+    this.setState({wishList: !this.state.wishList})
   }
   render() {
+    const wishList = this.state.wishList
     return (
-      <div onClick={this.wishList} className={`my-2 flex flex-col bg-white border-b-2 border-red-500 pointer-events-none shoplist ` + (!this.state.wishList ? `add` : `del`)}>
+      <div onClick={this.wishList} className={`my-2 flex flex-col bg-white border-b-2 border-red-500 pointer-events-none shoplist ` + (!wishList ? `add` : `del`)}>
         <div className={`w-full`}>
           {this.catLoad()}
         </div>

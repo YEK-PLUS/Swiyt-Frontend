@@ -42,6 +42,29 @@ class Course extends React.Component{
       this.setState({course : await GetCourse(adminNick,courseName)})
     }
   }
+  loadCourse(){
+    const lesson = this.state.course.lessons[0];
+    const {Header,Desc,Comment} = ClassComponents;
+    const {banner,category,name,subscriptions,rate,comments,uid,description} = lesson;
+    const wishList = _.has(lesson,'wishList')?lesson.wishList.wish_list : false;
+    return (
+      <div>
+        <Header
+          thub={banner.cdn.url}
+          category={category}
+          title={name}
+          studentCount={subscriptions}
+          rate={rate}
+          rateCount={_.size(comments)}
+          teacher={this.state.course.realname}
+          lessonUid={uid}
+          wishList={wishList}
+          />
+        <Desc desc={description} />
+        <Comment comments={comments} />
+      </div>
+    );
+  }
   render(){
     if(this.props.logined == true && !this.state.loadedAuth){
       this.setState({loadedAuth:true})
@@ -50,23 +73,7 @@ class Course extends React.Component{
     const {Header,Desc,Comment} = ClassComponents;
     return (
       <div className={`px-20 bg-gray-100`}>
-        {_.has(this.state.course,'uid')?
-          <div>
-            <Header
-              thub={this.state.course.lessons[0].banner.cdn.url}
-              category={this.state.course.lessons[0].category}
-              title={this.state.course.lessons[0].name}
-              studentCount={this.state.course.lessons[0].subscriptions}
-              rate={this.state.course.lessons[0].rate}
-              rateCount={_.size(this.state.course.lessons[0].comments)}
-              teacher={this.state.course.realname}
-              lessonUid={this.state.course.lessons[0].uid}
-              wishList={(this.state.course.lessons[0].wishList?this.state.course.lessons[0].wishList.wish_list: false)}
-              />
-            <Desc desc={this.state.course.lessons[0].description} />
-            <Comment comments={this.state.course.lessons[0].comments} />
-          </div>
-        :null}
+        {_.has(this.state.course,'uid')?this.loadCourse():null}
       </div>
     );
   };
