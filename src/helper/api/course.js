@@ -27,8 +27,8 @@ const GetCourseWithAuth = async (adminNick,courseName) => {
   const response = await CourseAuth(adminNick,courseName);
   return response;
 };
-const ChangeWishList = async (lessonUid) => {
-  const response = await WishList(lessonUid);
+const ChangeWishList = async (lessonUid,wishList) => {
+  const response = await WishList(lessonUid,wishList);
   return response;
 };
 export default {

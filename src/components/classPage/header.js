@@ -76,7 +76,7 @@ class Header extends React.Component {
       return this.props.addLoginPopup();
     }
     const {ChangeWishList} = Helpers;
-    const change = await ChangeWishList(this.props.lessonUid);
+    const change = await ChangeWishList(this.props.lessonUid,!this.state.wishList);
     this.setState({wishList:(!this.state.wishList)})
 
   }
