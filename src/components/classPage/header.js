@@ -33,6 +33,9 @@ class Header extends React.Component {
   if (nextProps.wishList !== this.state.wishList) {
     this.setState({ wishList: nextProps.wishList });
   }
+  if (nextProps.card !== this.state.card) {
+    this.setState({ card: nextProps.card });
+  }
 }
   catLoad(){
     let {cats} = this;
@@ -79,8 +82,16 @@ class Header extends React.Component {
       return this.props.addLoginPopup();
     }
     const {ChangeWishList} = Helpers;
-    const change = await ChangeWishList(this.props.lessonUid,!this.state.wishList);
+    const change = await ChangeWishList(this.props.lessonUid,{wish_list:!this.state.wishList});
     this.setState({wishList: !this.state.wishList})
+  }
+  card = async() =>{
+    if(this.props.logined!=true){
+      return this.props.addLoginPopup();
+    }
+    const {ChangeWishList} = Helpers;
+    const change = await ChangeWishList(this.props.lessonUid,{card:!this.state.card});
+    this.setState({card: !this.state.card})
   }
   render() {
     const wishList = this.state.wishList
