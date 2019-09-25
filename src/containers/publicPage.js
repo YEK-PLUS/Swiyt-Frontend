@@ -24,19 +24,19 @@ class publicProfile extends React.Component {
         <div className="w-full">
           <div className="py-4 px-16 mx-auto">
             <Head data={this.state.data}/>
-            {this.state.data.user_details?
+            {this.state.data.userDetails?
               <div>
-                <About about={this.state.data.user_details.biography}/>
-                <Education education={this.state.data.user_details.education}/>
-                <Certificate certificate={this.state.data.user_details.certificates}/>
-                <Experience experience={this.state.data.user_details.experience}/>
-                <Referance referance={this.state.data.user_details.referance}/>
+                <About about={this.state.data.userDetails.biography}/>
+                <Education education={this.state.data.userDetails.education}/>
+                <Certificate certificate={this.state.data.userDetails.certificates}/>
+                <Experience experience={this.state.data.userDetails.experience}/>
+                <Referance referance={this.state.data.userDetails.referance}/>
               </div>
               :null}
           </div>
-          {this.state.data.user_details?
+          {this.state.data.userDetails?
             <div>
-              <Portfoy portfoy={this.state.data.user_details.portfolio}/>
+              <Portfoy portfoy={this.state.data.userDetails.portfolio}/>
               <Courses courses={this.state.data.lessons}/>
             </div>
           :null}
