@@ -44,7 +44,7 @@ class Course extends React.Component{
   }
   loadCourse(){
     const lesson = this.state.course.lessons[0];
-    const {Header,Desc,Comment} = ClassComponents;
+    const {Header,Desc,Comment,AboutTeacher} = ClassComponents;
     const {banner,category,name,subscriptions,rate,comments,uid,description} = lesson;
     const wishList = _.has(lesson,'wishList')?lesson.wishList.wish_list : false;
     return (
@@ -61,6 +61,12 @@ class Course extends React.Component{
           wishList={wishList}
           />
         <Desc desc={description} />
+        <AboutTeacher
+          username={this.state.course.username}
+          img={this.state.course.image.cdn.url}
+          text={lesson.admin.userDetails.biography}
+          name={this.state.course.realname}
+          />
         <Comment comments={comments} />
       </div>
     );
