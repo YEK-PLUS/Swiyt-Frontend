@@ -4,24 +4,3 @@
 .button_hover:hover,.slick-slide:hover{
   transform: scale(1.05);
 }
-.shoplist{
-  align-items: flex-end;
-  justify-content: flex-end;
-}
-.shoplist::after{
-  pointer-events: all;
-  display: block;
-  color:white;
-  width: fit-content;
-  padding:  .5rem 1.5rem;
-  background: #f56565;
-  cursor: pointer;
-  position: absolute;
-  border-radius: 5px 5px 0 0;
-}
-.shoplist.add::after{
-  content: 'Sepete Ekle';
-}
-.shoplist.del::after{
-  content: 'Sepetten Cikart';
-}

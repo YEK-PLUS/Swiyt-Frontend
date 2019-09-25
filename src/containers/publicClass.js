@@ -47,6 +47,7 @@ class Course extends React.Component{
     const {Header,Desc,Comment,AboutTeacher} = ClassComponents;
     const {banner,category,name,subscriptions,rate,comments,uid,description} = lesson;
     const wishList = _.has(lesson,'wishList')?lesson.wishList.wish_list : false;
+    const card = _.has(lesson,'wishList')?lesson.wishList.card : false;
     return (
       <div>
         <Header
@@ -59,6 +60,7 @@ class Course extends React.Component{
           teacher={this.state.course.realname}
           lessonUid={uid}
           wishList={wishList}
+          card={card}
           />
         <Desc desc={description} />
         <AboutTeacher

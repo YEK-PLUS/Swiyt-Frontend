@@ -7,7 +7,7 @@ import _ from 'lodash';
 import Button from '../ui/button';
 import * as PopupActions from '../../state/actions/popup';
 import Helpers from '../../helper';
-
+import { FaHeart } from "react-icons/fa";
 const mapStateToProps = (state) => ({
   logined: state.user.logined,
 });
@@ -84,8 +84,9 @@ class Header extends React.Component {
   }
   render() {
     const wishList = this.state.wishList
+    const card = this.state.card
     return (
-      <div onClick={this.wishList} className={`my-2 flex flex-col bg-white border-b-2 border-red-500 pointer-events-none shoplist ` + (!wishList ? `add` : `del`)}>
+      <div className={`my-2 flex flex-col bg-white border-b-2 border-red-500 items-end justify-end`}>
         <div className={`w-full`}>
           {this.catLoad()}
         </div>
@@ -110,6 +111,14 @@ class Header extends React.Component {
 
           </div>
 
+        </div>
+        <div className={`w-auto px-5 py-2 bg-red-500 pointer absolute rounded-t flex flex-row`}>
+          <div onClick={this.wishList}>
+            <FaHeart color={(wishList? 'black':'white')}/>
+          </div>
+          <div onClick={this.card}>
+            <FaHeart color={(card? 'black':'white')}/>
+          </div>
         </div>
       </div>
     );
